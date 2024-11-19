@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Beatles</title>
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="container">
+        <span class="logo"logo>The Beatles</span>
+        <nav>
+          <ul>
+            <li class="active"><a href="/">Главная</a></li>
+            <li><a href="/info.html">Общая информация</a></li>
+            <li><a href="/hist.html">История</a></li>
+            <li><a href="/disck.html">Дискография</a></li>
+            <li><a href="/albom.html">Заказать альбом</a></li>
+            <li class="btn"><a href="/contact.html">Контакты</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="hero container">
+        <div class="herozakaz">
+          <h1>Добро пожаловать на сайт</h1>
+          <h2>Наш сайт посвещён легендарной группе</h2>
+          <h2>"The Beatles"</h2>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img src="img1.jpg" style="width:100%; height: 600px;">
+          </div>
+          <div class="mySlides fade">
+            <img src="img2.jpg" style="width:100%; height: 600px;">
+          </div>
+          <div class="mySlides fade">
+            <img src="img3.jpg" style="width:100%; height: 600px;">
+          </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <br>
+            <script>
+              let slideIndex = 1;
+              showSlides(slideIndex);  
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }  
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                } 
+                function showSlides(n) {
+                  let i;
+                  let slides = document.getElementsByClassName("mySlides");
+                  let dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+            </script>
+        </div>
+      </div>
+      <font align="justify" face="Noto Sans" size="3">
+        На нашем
+        сайте вы найдете <em> историю создания группы, биографии участников, дискографию и фильмографию</em>
+        группы. Мы предлагаем вашему вниманию только <em>достоверную</em> информацию.
+        Это учебный сайт<em> демонстрационного содержания. </em>Его цель - отработка технологии разметки
+        гипертекстовых документов с помощью языка HTML. Более полную информацию о группе <em>The Beatles</em>
+        вы найдете на других сайтах.   
+      </font>
+      <br>
+      <font face="Noto Sans" size="1"> © Все права защищены.</font>
+    </div>
+  </body>
+</html>
